@@ -12,6 +12,7 @@ MY_CELL = os.environ["MY_CELL"]
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ['app_secretkey']
 
+
 @app.route('/')
 def home():  # put application's code here
     return render_template("index.html")
@@ -36,7 +37,7 @@ def send_contact_info(name, email, phone, message):
     msg = EmailMessage()
     msg["From"] = MY_EMAIL
     msg["To"] = MY_CELL
-    msg["Subject"] = f"🚨New Contact Form"
+    msg["Subject"] = f"😆 New Contact Form\n"
     msg.set_content(f"Name: {name}\nEmail: {email}\nPhone: {phone}\nMessage:{message}")
     with smtplib.SMTP("smtp.gmail.com") as connection:
         connection.starttls()

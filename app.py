@@ -37,7 +37,8 @@ def send_contact_info(name, email, phone, message):
     msg = EmailMessage()
     msg["From"] = MY_EMAIL
     msg["To"] = MY_CELL
-    msg["Subject"] = f"😆 New Contact Form\n"
+    # For Email Subject Line I have this sending to My cell so Subject line creates bugs
+    # msg["Subject"] = f"New Contact Form!\n"
     msg.set_content(f"Name: {name}\nEmail: {email}\nPhone: {phone}\nMessage:{message}")
     with smtplib.SMTP("smtp.gmail.com") as connection:
         connection.starttls()

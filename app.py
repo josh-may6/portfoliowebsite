@@ -60,6 +60,10 @@ def receive_data():
 def projects():
     return render_template('projects.html')
 
+@app.route('/aboutme')
+def aboutme():
+    return render_template('aboutme.html')
+
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))

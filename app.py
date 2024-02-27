@@ -25,7 +25,7 @@ def resume():
 
 @app.route('/download-resume')
 def download_resume():
-    return send_from_directory('static', path='files/Josh Maitre - Resume.pdf')
+    return send_from_directory('static', path='files/Maitre, Josh Resume.pdf')
 
 
 @app.route('/contact')
